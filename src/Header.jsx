@@ -4,7 +4,7 @@ import { NavLink, useNavigate } from 'react-router-dom';
 export default function Header({ currentUser, onAddAPLClick }) {
   const navigate = useNavigate();
   function handleLogout() {
-    navigate('/');
+    navigate('/');//blah blah blah
   }
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light mb-4 shadow-sm">
