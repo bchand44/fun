@@ -8,7 +8,6 @@ import { AuthProvider, useAuth } from './AuthContext';
 import { UserProvider } from './UserContext';
 import './App.css';
 import Program from './Program';
-import TestingGuide from './TestingGuide';
 import Showcase from './Showcase';
 import NewPage from './NewPage';
 
@@ -20,19 +19,15 @@ function PrivateRoute({ element }) {
 function AppContent() {
   const { isLoggedIn } = useAuth();
   return (
-    <>
-      {isLoggedIn && <Header />}
-      <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/register" element={<Registration />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/add-apl" element={<PrivateRoute element={<AddAPL />} />} />
-        <Route path="/program" element={<PrivateRoute element={<Program />} />} />
-        <Route path="/testing-guide" element={<PrivateRoute element={<TestingGuide />} />} />
-        <Route path="/showcase" element={<Showcase />} />
-        <Route path="/newpage" element={<PrivateRoute element={<NewPage />} />} />
-      </Routes>
-    </>
+    <Routes>
+      <Route path="/" element={<Login />} />
+      <Route path="/register" element={<Registration />} />
+      <Route path="/dashboard" element={isLoggedIn ? <><Header /><Dashboard /></> : <Login />} />
+      <Route path="/add-apl" element={isLoggedIn ? <><Header /><AddAPL /></> : <Login />} />
+      <Route path="/program" element={isLoggedIn ? <><Header /><Program /></> : <Login />} />
+      <Route path="/showcase" element={<Showcase />} />
+      <Route path="/newpage" element={isLoggedIn ? <NewPage /> : <Login />} />
+    </Routes>
   );
 }
 

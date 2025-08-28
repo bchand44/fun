@@ -1,24 +1,24 @@
 import React from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
+import './Header.css';
 
 export default function Header({ currentUser, onAddAPLClick }) {
   const navigate = useNavigate();
   function handleLogout() {
-    navigate('/');//blah blah blah
+    navigate('/');
   }
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light mb-4 shadow-sm">
-      <div className="container d-flex justify-content-between align-items-center">
-        <div className="navbar-nav">
-          <button className="nav-link btn btn-link" onClick={onAddAPLClick}>Add APL</button>
-          <NavLink className="nav-link" to="/program">Program</NavLink>
-          <NavLink className="nav-link" to="/testing-guide">Testing Guide</NavLink>
+    <nav className="custom-navbar">
+      <div className="custom-navbar-container">
+        <div className="custom-navbar-links">
+          <button className="custom-nav-link" onClick={onAddAPLClick}>Add APL</button>
+          <NavLink className="custom-nav-link" to="/program">Program</NavLink>
         </div>
-        <div className="d-flex align-items-center gap-3">
+        <div className="custom-navbar-user">
           {currentUser && (
-            <span className="fw-bold text-primary">{currentUser.name}</span>
+            <span className="custom-user-name">{currentUser.name}</span>
           )}
-          <button className="btn btn-danger" onClick={handleLogout}>Log Out</button>
+          <button className="custom-logout-btn" onClick={handleLogout}>Log Out</button>
         </div>
       </div>
     </nav>
