@@ -1,0 +1,163 @@
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 32px rgba(42,82,152,0.10);
+  padding: 2.5em 2em;
+  margin: 2em auto;
+  max-width: 500px;
+  width: 100%;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%) !important;
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+  color: #222;
+}
+
+header {
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  padding: 1rem 0;
+  margin-bottom: 2rem;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+nav a {
+  color: #3b82f6;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+nav a:hover {
+  background: #e0e7ff;
+}
+
+.page {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+  padding: 2rem;
+  max-width: 400px;
+  margin: 2rem auto;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+form label {
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+}
+form input {
+  padding: 0.6rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.2s;
+}
+form input:focus {
+  border-color: #3b82f6;
+}
+button[type="submit"] {
+  background: #3b82f6;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.7rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+button[type="submit"]:hover {
+  background: #2563eb;
+}
+
+h2, h3 {
+  font-weight: 700;
+  color: #2a5298;
+  margin-bottom: 1.5rem;
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, #2a5298 0%, #1e3c72 100%);
+  border: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(42,82,152,0.08);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(90deg, #1e3c72 0%, #2a5298 100%);
+}
+
+.form-control, .form-select {
+  border-radius: 8px;
+  font-size: 1.05rem;
+  padding: 0.7rem 1rem;
+}
+
+.alert-info {
+  background: #e0eafc;
+  color: #2a5298;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+.animate__animated {
+  animation-duration: 0.7s;
+}
