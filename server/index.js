@@ -154,9 +154,10 @@ app.get('/api/users', async (req, res) => {
       index: 'users',
       body: { query: { match_all: {} } }
     });
-    res.json(body.hits.hits);
+    const hits = Array.isArray(body.hits?.hits) ? body.hits.hits : [];
+    res.json(hits);
   } catch (error) {
-    res.status(500).json({ error: error.message });
+    res.status(500).json({ error: error.message, users: [] });
   }
 });
 
