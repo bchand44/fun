@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import './Header.css';
 
-export default function Header({ currentUser, onAddAPLClick }) {
+export default function Header({ currentUser, onAddAPLClick, onShowUsersClick }) {
   const navigate = useNavigate();
   function handleLogout() {
     navigate('/');
@@ -15,6 +15,7 @@ export default function Header({ currentUser, onAddAPLClick }) {
           <NavLink className="custom-nav-link" to="/program">Program</NavLink>
         </div>
         <div className="custom-navbar-user">
+          <button className="custom-nav-link" onClick={onShowUsersClick}>Current Users</button>
           {currentUser && (
             <span className="custom-user-name">{currentUser.name}</span>
           )}
